@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import Dropdown from 'react-bootstrap/Dropdown';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import adapter from 'axios/lib/adapters/http';
 
 export default function Registration() {
 
     const [userEmail, setEmail] = useState('');
 	const [userName, setName] = useState('');
 	const [userPassword, setPassword] = useState('');
-    const [userType, setType] = useState('');
     const [radioValue, setRadioValue] = useState('1');
 
 
@@ -28,12 +28,21 @@ export default function Registration() {
 	};
 
 	const handlePasswordChange = (event) => {
+        console.log(event.target.value)
 		setPassword(event.target.value);
 	};
     
-    const handleTypeChange = (event) => {
-		setType(event.target.value);
+    const handleRadioValue = (event) => {
+        console.log(event.target.value)
+		setRadioValue(event.target.value);
 	};
+
+    let config = {
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'content-type': 'multipart/form-data'
+        },
+    };
 
     const register = (event)=> {
         event.preventDefault();
@@ -41,8 +50,8 @@ export default function Registration() {
             name: userName,
             email: userEmail,
             password: userPassword,
-            type: userType
-        })
+            type: radioValue
+        }, config)
     .then((response) => {
         console.log(response)
         window.location.href = '/'})
@@ -79,7 +88,7 @@ export default function Registration() {
                             name="radio"
                             value={radio.value}
                             checked={radioValue === radio.value}
-                            onChange={(e) => setRadioValue(e.currentTarget.value)}
+                            onChange={handleRadioValue}
                         >
                             {radio.name}
                         </ToggleButton>

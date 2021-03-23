@@ -14,13 +14,19 @@ export default function Login() {
 		setPassword(event.target.value);
 	};
 
-    
+    let config = {
+        headers: {
+            Authorization: 'Bearer ' + sessionStorage.getItem('token'),
+            'Access-Control-Allow-Origin': '*',
+        },
+    };
+
     const login = (event) => {
         event.preventDefault();
         axios.post("http://127.0.0.1:8000/api/login", {
             email: userEmail,
             password: userPassword
-        })
+        }, config)
         .then((response) => {
             console.log(response);
             sessionStorage.setItem('token', response.data.token );
@@ -54,7 +60,7 @@ export default function Login() {
 
 
 const BODY = styled.body`
-	background-image: url('https://m.blog.hu/mr/mrfoster/image/50529468_l.jpg');
+	background-image: url('https://lh3.googleusercontent.com/proxy/c3UIDb-4TsYL2wd9pOoUYVUXCLfgNMH_LjCE2wkah4ZiA7KmZLij4kFFUtpZflVWSqn7T-W6t3PBSlv125cjSL4jhpGzIPAhp-G5r3-5xAspsO1qLmxnRo2ns0ck6lS65lk5Lp8jeaUKCwOSw-z1QfBA1STjBP7RmgmZ9LWTTA');
 	background-position: center;
     background-origin: content-box;
     background-repeat: no-repeat;
