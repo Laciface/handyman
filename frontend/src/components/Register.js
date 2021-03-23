@@ -37,7 +37,7 @@ export default function Registration() {
 
     const register = (event)=> {
         event.preventDefault();
-        axios.post("http://127.0.0.1:8000/api/register", {
+        axios.post("http://127.0.0.1:8000/api/registration", {
             name: userName,
             email: userEmail,
             password: userPassword,
