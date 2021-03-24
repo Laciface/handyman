@@ -22,12 +22,11 @@ import styled from 'styled-components';
         <div className="slide-container">
           <Slider {...settings}>
             <div className="each-slide">
-              <div style={{ backgroundImage: `url(${gasfitter})`,
+              <div style={{ backgroundImage: `url("${gasfitter}")`,
                             backgroundRepeat:'no-repeat',
                             backgroundSize: 'cover',
                             height : '800px'
             }}>
-                <span>slide 1</span>
               </div>
             </div>
             <div className="each-slide">
@@ -36,7 +35,6 @@ import styled from 'styled-components';
                             backgroundSize: 'cover',
                             height : '800px'
             }}>
-                <span>Slide 2</span>
               </div>
             </div>
             <div className="each-slide">
@@ -45,7 +43,6 @@ import styled from 'styled-components';
                             backgroundSize: 'cover',
                             height : '800px'
             }}>
-                <span>Slide 3</span>
               </div>
             </div>
           </Slider>

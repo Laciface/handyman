@@ -30,7 +30,7 @@ export default function Login() {
         .then((response) => {
             console.log(response);
             sessionStorage.setItem('token', response.data.token );
-            sessionStorage.setItem('username', response.data.name );
+            sessionStorage.setItem('username', response.data.user.name);
             window.location.href = '/';
         })
         .catch(function (error) {

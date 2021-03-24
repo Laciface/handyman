@@ -40,7 +40,6 @@ export default function Registration() {
     let config = {
         headers: {
             'Access-Control-Allow-Origin': '*',
-            'content-type': 'multipart/form-data'
         },
     };
 
