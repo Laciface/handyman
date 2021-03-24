@@ -11,16 +11,26 @@ class UserController extends Controller
 
     public function registration(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required'
-        ]);
+        try {
+            $this->validate($request, [
+                'name' => 'required|min:4',
+                'email' => 'required|email',
+                'password' => 'required|min:8',
+                'type' => 'required'
+            ]);
 
-        $userData = $request->all();
-        $userData['password'] = Hash::make($userData['password']);
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'type'=> $request->type
+            ]);
 
-        return User::create($userData);
+            return response()->json(['message' => 'User created successfully.'], 200);
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return response()->json(['message' => "Something went wrong"], 400);
+        }
     }
 
     public function login(Request $request)

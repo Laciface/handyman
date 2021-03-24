@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::post('login', [UserController::class, 'login'])->name('auth.login');
 
 Route::post('registration',[UserController::class, 'registration']);
