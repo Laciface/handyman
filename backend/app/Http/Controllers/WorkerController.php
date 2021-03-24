@@ -41,4 +41,18 @@ class WorkerController extends Controller
             return response()->json(['message' => "Something went wrong"], 400);
         }
     }
+
+    public function selectSpecificWorkersByDistrict(Request $request){
+        try{
+            $workers = Worker::where('specialization', $request->specializaton)->where('district', $request->district)->get();
+
+            return response()->json([
+                'workers' => $workers
+            ], 200);
+
+        }catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return response()->json(['message' => "Something went wrong"], 400);
+        }
+    }
 }

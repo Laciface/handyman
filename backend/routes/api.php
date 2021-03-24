@@ -23,6 +23,7 @@ Route::post('registration',[UserController::class, 'registration']);
 
 Route::post('worker',[WorkerController::class, 'addNewWorker']);
 Route::get('workers',[WorkerController::class, 'selectSpecificWorkers']);
+Route::get('district',[WorkerController::class, 'selectSpecificWorkersByDistrict']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
