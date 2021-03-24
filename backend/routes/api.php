@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WorkerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', [UserController::class, 'login'])->name('auth.login');
 
 Route::post('registration',[UserController::class, 'registration']);
+
+Route::post('worker',[WorkerController::class, 'addNewWorker']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
