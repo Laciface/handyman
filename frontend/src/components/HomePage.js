@@ -6,6 +6,7 @@ import Carousel from './Carousel';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import Footer from './layouts/Footer';
 
 export default function HomePage() {
     return (
@@ -13,6 +14,7 @@ export default function HomePage() {
         <Slideshow/>
         {/* <Carousel/> */}
         {hasToken()}
+        <Footer/>
         </React.Fragment>
     )
 }
