@@ -14,7 +14,9 @@ class CreateWorkersTable extends Migration
     public function up()
     {
         Schema::create('workers', function (Blueprint $table) {
-            $table->id("user_id")->unique();
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             //$table->foreign('user_id')->references("id")->on("users");
             $table->string('name');
             $table->string('email');

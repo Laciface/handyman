@@ -10,7 +10,9 @@ class WorkerController extends Controller
 {
     public function addNewWorker(Request $request){
         try{
+            $user_id = auth()->user()->id;
             $worker = new Worker();
+            $worker->user_id = $user_id;
             $worker->name = $request->name;
             $worker->email = $request->email;
             $worker->specialization = $request->specialization;
@@ -30,7 +32,8 @@ class WorkerController extends Controller
 
     public function selectSpecificWorkers(Request $request){
         try{
-            $workers = Worker::where('specialization', $request->specializaton)->get();
+            $user_id = auth()->user()->id;
+            $workers = Worker::where('specialization', $request->specialization)->get();
 
             return response()->json([
                 'workers' => $workers
@@ -44,7 +47,8 @@ class WorkerController extends Controller
 
     public function selectSpecificWorkersByDistrict(Request $request){
         try{
-            $workers = Worker::where('specialization', $request->specializaton)->where('district', $request->district)->get();
+            $user_id = auth()->user()->id;
+            $workers = Worker::where('specialization', $request->specialization)->where('district', $request->district)->get();
 
             return response()->json([
                 'workers' => $workers

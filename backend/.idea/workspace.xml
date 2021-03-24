@@ -31,7 +31,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e41a9be-dabd-4b0f-9bea-7e399ce7286e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WorkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WorkerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_24_102729_create_workers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_24_102729_create_workers_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +204,7 @@
       <updated>1616505177669</updated>
       <workItem from="1616505178883" duration="6721000" />
       <workItem from="1616579216147" duration="2566000" />
-      <workItem from="1616582853830" duration="2089000" />
+      <workItem from="1616582853830" duration="4160000" />
     </task>
     <servers />
   </component>
