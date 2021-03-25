@@ -44,10 +44,16 @@ class UserController extends Controller
             $token = auth()->user()->createToken('LaravelAuthApp')->plainTextToken;
             return response()->json([
                 'token' => $token,
-                'user' => auth()->user()
+                'user' => auth()->user(),
+                'email' => $request->email
             ], 200);
         } else {
             return response()->json(['error' => 'Unauthorised'], 401);
         }
+    }
+
+    public function getUserByID(Request $request){
+        $user_id = auth()->user()->id;
+        return User::find($user_id);
     }
 }
