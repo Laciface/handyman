@@ -31,6 +31,7 @@ export default function Login() {
             console.log(response);
             sessionStorage.setItem('token', response.data.token );
             sessionStorage.setItem('username', response.data.user.name);
+            sessionStorage.setItem('type', )
             window.location.href = '/';
         })
         .catch(function (error) {
@@ -60,12 +61,12 @@ export default function Login() {
 
 
 const BODY = styled.body`
-	background-image: url('https://lh3.googleusercontent.com/proxy/c3UIDb-4TsYL2wd9pOoUYVUXCLfgNMH_LjCE2wkah4ZiA7KmZLij4kFFUtpZflVWSqn7T-W6t3PBSlv125cjSL4jhpGzIPAhp-G5r3-5xAspsO1qLmxnRo2ns0ck6lS65lk5Lp8jeaUKCwOSw-z1QfBA1STjBP7RmgmZ9LWTTA');
+	background-image: url('https://i2.wp.com/www.safetymanualosha.com/wp-content/uploads/2016/08/handyman.jpg?fit=1200%2C675&ssl=1');
 	background-position: center;
     background-origin: content-box;
     background-repeat: no-repeat;
     background-size: cover;
-	min-height:78.7vh;
+	min-height:87.4vh;
 	font-family: 'Noto Sans', sans-serif;
 `
 

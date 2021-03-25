@@ -105,7 +105,7 @@ const BODY = styled.body`
     background-origin: content-box;
     background-repeat: no-repeat;
     background-size: cover;
-	min-height:78.7vh;
+	min-height:87.4vh;
 	font-family: 'Noto Sans', sans-serif;
 `
 
