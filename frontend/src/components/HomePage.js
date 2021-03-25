@@ -4,15 +4,19 @@ import 'react-slideshow-image/dist/styles.css';
 import Slideshow from './Slideshow';
 import Carousel from './Carousel';
 import styled from 'styled-components';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import Footer from './layouts/Footer';
+import {Button} from '@material-ui/core';
+import ButtonBases from './Buttons';
+
 
 export default function HomePage() {
     return (
         <React.Fragment>
-        <Slideshow/>
-        {/* <Carousel/> */}
-        {hasToken()}
+        <ButtonBases/>
+        {/* {hasToken()} */}
+        <Footer/>
         </React.Fragment>
     )
 }
@@ -24,9 +28,9 @@ const hasToken = () => {
         return(
         <ButtonDiv>
             <DivContainer>
-            <Link to='/Login'><Button variant="success">Login</Button></Link>
+            <Link to='/Login'><Button>Login</Button></Link>
             </DivContainer>
-            <Link to='/Registration'><Button variant="success">Register</Button></Link>
+            <Link to='/Registration'><Button>Register</Button></Link>
         </ButtonDiv>
         )
     }
