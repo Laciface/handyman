@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('worker',[WorkerController::class, 'addNewWorker']);
     Route::get('workers',[WorkerController::class, 'selectSpecificWorkers']);
     Route::get('district',[WorkerController::class, 'selectSpecificWorkersByDistrict']);
+    Route::get('userbyid', [UserController::class, 'getUserByID']);
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
