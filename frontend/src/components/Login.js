@@ -31,8 +31,8 @@ export default function Login() {
             console.log(response);
             sessionStorage.setItem('token', response.data.token );
             sessionStorage.setItem('username', response.data.user.name);
-            sessionStorage.setItem('type', )
-            window.location.href = '/';
+            sessionStorage.setItem('type', response.data.user.type);
+            window.location.href = '/UserInterface';
         })
         .catch(function (error) {
             alert(error)

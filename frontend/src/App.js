@@ -4,22 +4,42 @@ import HomePage from './components/HomePage';
 import Register from './components/Register';
 import Login from './components/Login';
 import Header from './components/layouts/Header';
-import Navigationbar from './components/layouts/Navbar';
+import UserInterface from './components/UserInterface';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
 
 function App() {
   return (
+    <MuiThemeProvider theme={theme}>
     <Router>
     <div className="App">
       <Header/>
-      {/* <Navigationbar/> */}
       <Route exact path='/' component={HomePage} />
       <Route exact path='/Registration' component={Register}></Route>
       <Route exact path='/Login' component={Login}></Route>
+      <Route exact path='/UserInterface' component={UserInterface}></Route>
 
     </div>
     </Router>
+    </MuiThemeProvider>
   );
 }
 
