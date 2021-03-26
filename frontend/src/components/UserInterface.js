@@ -8,9 +8,8 @@ export default function UserInterface() {
         <div>
             <Navbar/>
             <DIV>
-                <div style={{ height: '580px'}}>
-                    <h3>Szia <span>{sessionStorage.getItem('username')}!</span></h3>
-                    <h3>kutyáidat sétáltatod?</h3>
+                <div style={{ height: '580px', backgroundColor : '#e1f5fe'}}>
+                    <h3>Welcome <span>{sessionStorage.getItem('username')}!</span></h3>
                 </div>
             </DIV>
             <Footer/>
@@ -19,7 +18,8 @@ export default function UserInterface() {
 }
 
 const DIV = styled.div`
-    background-image: url("https://myhome.co.uk/wp-content/uploads/2019/07/handyman-services-london.jpg");
+    background-color: 'blue';
+    /* background-image: url("https://myhome.co.uk/wp-content/uploads/2019/07/handyman-services-london.jpg"); */
     background-repeat:'no-repeat';
     background-size: 'cover';
     height : '800px';
