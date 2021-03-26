@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Navbar from './layouts/Navbar';
 import styled from 'styled-components';
 import axios from 'axios';
-import { LaptopWindows } from '@material-ui/icons';
+import SimpleModal from './layouts/Modal';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -76,12 +76,19 @@ export default function CVForm() {
 			)
 			.then((response) => {
 				console.log(response);
+				openModal();
 				window.location.href = '/UserInterface';
 			})
 			.catch(function (error) {
 				alert(error);
 			});
 	};
+
+	const openModal = () => {
+		return(
+			<SimpleModal/>
+		)
+	}
 
 	return (
 		<React.Fragment>

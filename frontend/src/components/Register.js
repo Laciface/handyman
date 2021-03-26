@@ -15,8 +15,8 @@ export default function Registration() {
 
 
     const radios = [
-        { name: 'Worker', value: 'worker' },
-        { name: 'Searcher', value: 'searcher' }
+        { name: 'Handyman', value: 'worker' },
+        { name: 'Customer', value: 'searcher' }
         ];
 
 	const handleEmailChange = (event) => {
