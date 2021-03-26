@@ -61,6 +61,7 @@ export default function CVForm() {
 	};
 
 	const handleCVRegistration = (event) => {
+		event.preventDefault();
 		axios
 			.post(
 				'http://127.0.0.1:8000/api/worker',
@@ -106,7 +107,7 @@ export default function CVForm() {
 							onClick={handleEmailChange}
 							required
 							id='outlined-required'
-							label='Required'
+							label='Email'
 							value={sessionStorage.getItem('email')}
 							variant='outlined'
 						/>
@@ -125,7 +126,7 @@ export default function CVForm() {
 							onChange={handleDistrictChange}
 							required
 							id='outlined-required'
-							placeholder='District'
+							label='District'
 							variant='outlined'
 						/>
 					</Div>
@@ -133,8 +134,10 @@ export default function CVForm() {
 						<TextField
 							onChange={handlePhoneChange}
 							id='outlined-number'
-							placeholder='Number'
+							required
+							label='Phone Number'
 							type='number'
+							placeholder='0626444444'
 							InputLabelProps={{
 								shrink: true,
 							}}
