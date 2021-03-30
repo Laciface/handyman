@@ -6,6 +6,7 @@ import Login from './components/Login';
 import CVForm from './components/CVForm';
 import Header from './components/layouts/Header';
 import UserInterface from './components/UserInterface';
+import Slider from './components/slider/Slider';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -37,6 +38,7 @@ function App() {
 					<Route exact path='/Login' component={Login}></Route>
 					<Route exact path='/UserInterface' component={UserInterface}></Route>
 					<Route exact path='/CV' component={CVForm}></Route>
+					<Route exact path='/Slider' component={Slider}></Route>
 				</div>
 			</Router>
 		</MuiThemeProvider>
